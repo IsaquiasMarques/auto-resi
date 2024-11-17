@@ -1,0 +1,96 @@
+<div class="section-content">
+    <div class="limited-container flex justify-around items-start">
+        <div class="faqs flex flex-col gap-2">
+            <div class="title mb-5">
+                <h1 class="text-primary text-[1.875rem] font-bold">
+                    Perguntas mais frequentes
+                </h1>
+            </div>
+            @for (item of faq; track $index) {
+                <div class="faq max-w-[600px]">
+                    <div class="header p-3 bg-[linear-gradient(90deg,#012CB6_59%,#23C2FB_100%)] flex justify-between items-center">
+                        <div class="question">
+                            <p class="text-white">{{ item.question }}</p>
+                        </div>
+                        <div class="button h-10">
+                            <button
+                            (click)="openFaq($index)"
+                            *ngIf="$index !== activeIndex()"
+                            >
+                                <svg
+                                width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="40" height="40" rx="20" fill="white" fill-opacity="0.1"/>
+                                    <path d="M20 13V27M13 20H27" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </button>
+                            <button
+                            (click)="closeFaqs($index)"
+                            *ngIf="$index === activeIndex()"
+                            >
+                                <svg
+                                width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="40" height="40" rx="20" fill="white" fill-opacity="0.1"/>
+                                    <path d="M26 14L14 26M14 14L26 26" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="body bg-[#F3F0F0]/80 px-3 py-0 duration-[.4s] overflow-hidden"
+                    [ngClass]="{
+                        '!py-5': $index === activeIndex(),
+                    }"
+                    [style.height.px]="($index === this.activeIndex()) ? this.activeFaqBodyHeight + 40 : 0"
+                    >
+                        <p class="text-base">{{ item.answer }}</p>
+                    </div>
+                </div>
+            }
+        </div>
+        <div class="contact-form w-full max-w-[526px]">
+            <div class="title mb-5 max-w-[60%]">
+                <h1 class="text-black text-base font-regular">
+                    Envia a sua pergunta e teremos todo o prazer em ajudar
+                </h1>
+            </div>
+            <form class="flex flex-col gap-3">
+                <div class="row flex gap-3 justify-between items-stretch">
+                    <div class="input w-full">
+                        <input
+                        class="px-4 w-full py-3 outline-none border border-black/10 rounded-lg  text-black placeholder:text-black/60"
+                        type="text"
+                        name="name"
+                        placeholder="Nome completo">
+                    </div>
+                    <div class="input w-full">
+                        <input
+                        class="px-4 w-full py-3 outline-none border border-black/10 rounded-lg text-black placeholder:text-black/60"
+                        type="email"
+                        name="email"
+                        placeholder="Email">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input">
+                        <input
+                        class="px-4 w-full py-3 outline-none border border-black/10 rounded-lg text-black placeholder:text-black/60"
+                        type="text"
+                        name="subject"
+                        placeholder="Assunto">
+                    </div>
+                </div>
+                <div class="row">
+                    <textarea
+                    class="px-4 w-full py-3 outline-none border resize-none border-black/10 rounded-lg text-black placeholder:text-black/60"
+                    name="message"
+                    id="" rows="6"
+                    placeholder="Mensagem"></textarea>
+                </div>
+                <div class="row">
+                    <button class="bg-primary font-semibold py-3 text-base text-white block w-full rounded-lg text-center">
+                        Enviar
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,23 @@
+<div class="header-container bg-[linear-gradient(90deg,#012CB6_59%,#23C2FB_100%)]">
+    <div class="limited-container flex flex-row justify-between items-center py-[16px]">
+        <div class="logo relative max-w-[199px] max-h-[64px]">
+            <img src="assets/static/logo.png" alt="" class="w-full h-full object-cover object-center">
+        </div>
+        <nav class="navigation flex gap-[53px] justify-center items-center">
+            <div class="menu">
+                <ul class="flex gap-7 justify-start items-center">
+                    <li><a [routerLink]="['/']" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{ exact: true }" class="text-white">Home</a></li>
+                    <li><a [routerLink]="['/about-us']" [routerLinkActive]="'active'" class="text-white">Sobre Nós</a></li>
+                    <li><a [routerLink]="['/services']" [routerLinkActive]="'active'" class="text-white">Serviços</a></li>
+                    <li><a [routerLink]="['/blog']" [routerLinkActive]="'active'" class="text-white">Blog</a></li>
+                    <li><a [routerLink]="['/contact-us']" [routerLinkActive]="'active'" class="text-white">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="access-store">
+                <a [routerLink]="['']" class="uppercase text-white font-semibold text-sm py-[14px] px-6 rounded-full block bg-secondary shadow-[0px_4px_4px_rgba(0,0,0,25%)]">
+                    Acessar loja
+                </a>
+            </div>
+        </nav>
+    </div>
+</div>

@@ -1,0 +1,4 @@
+.menu ul li a.active{
+    text-transform: uppercase;
+    font-weight: 700;
+}
