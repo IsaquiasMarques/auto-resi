@@ -1,1 +1,41 @@
-<p>blog works!</p>
+<div class="section-container py-14 bg-[#EAEDEE]">
+    <div class="limited-container flex justify-between items-start">
+        <div class="content max-w-[321px] flex flex-col gap-y-4 sticky top-[120px]">
+            <div class="title">
+                <h1 class="font-bold text-[1.875rem]">Noticias do Blog</h1>
+            </div>
+            <div class="description">
+                <p class="text-base">
+                    Actualize-se sobre tendências em climatização, refrigeração e qualidade do ar com as nossas notícias
+                </p>
+            </div>
+            <div class="cta mt-4">
+                <a [routerLink]="['']" class="block bg-primary rounded-full py-4 px-8 text-white font-semibold w-fit text-center">
+                    Ver todos os artigos
+                </a>
+            </div>
+        </div>
+        <div class="posts flex gap-4 justify-start items-stretch">
+            <div class="post w-[367px] h-[360px] relative">
+                <div class="img w-full h-full">
+                    <img src="assets/images/posts/image.png" class="w-full h-full object-cover object-center" alt="">
+                </div>
+                <div class="post-details absolute bottom-0 left-0 bg-primary/70 w-full p-6">
+                    <p class=" text-white font-medium">
+                        Doenças comuns associadas à má climatização
+                    </p>
+                </div>
+            </div>
+            <div class="post w-[367px] h-[360px] relative">
+                <div class="img w-full h-full">
+                    <img src="assets/images/posts/image-2.png" class="w-full h-full object-cover object-center" alt="">
+                </div>
+                <div class="post-details absolute bottom-0 left-0 bg-primary/70 w-full p-6">
+                    <p class=" text-white font-medium">
+                        Como a qualidado de ar afecta a produtividade no local de trabalho?
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

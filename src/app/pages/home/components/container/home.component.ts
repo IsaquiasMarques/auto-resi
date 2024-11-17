@@ -6,6 +6,7 @@ import { ServicesComponent } from '../views/services/services.component';
 import { BenefitsComponent } from '../views/benefits/benefits.component';
 import { ClientsComponent } from '../views/clients/clients.component';
 import { FaqComponent } from '../views/faq/faq.component';
+import { BlogComponent } from '../views/blog/blog.component';
 
 @Component({
   selector: 'app-home',
@@ -17,7 +18,8 @@ import { FaqComponent } from '../views/faq/faq.component';
     ServicesComponent,
     BenefitsComponent,
     ClientsComponent,
-    FaqComponent
+    FaqComponent,
+    BlogComponent
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
